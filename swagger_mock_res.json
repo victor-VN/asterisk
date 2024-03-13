@@ -1,0 +1,38 @@
+{
+    "openapi": "3.0.1",
+    "servers": [
+      {
+        "url": "http://localhost:8080",
+        "description": "Generated server url"
+      }
+    ],
+    "tags": [
+      {
+        "name": "version",
+        "description": "testing tags"
+      }
+    ],
+    "paths": {
+      "/version": {
+        "get": {
+          "tags": [
+            "version"
+          ],
+          "operationId": "version",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {}
+  }
