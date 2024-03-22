@@ -1,38 +1,77 @@
 {
-    "openapi": "3.0.1",
-    "servers": [
+  "openapi": "3.0.1",
+  "servers": [
       {
-        "url": "http://localhost:8080",
-        "description": "Generated server url"
+          "url": "http://localhost:8080",
+          "description": "Generated server url"
       }
-    ],
-    "tags": [
+  ],
+  "tags": [
       {
-        "name": "version",
-        "description": "testing tags"
+          "name": "catAPI",
+          "description": "testing cat tag"
+      },
+      {
+          "name": "catAPI;entitlement",
+          "description": "low_enti"
+      },
+      {
+          "name": "version",
+          "description": "testing tags"
+      },
+      {
+          "name": "catAPI;RF-0001",
+          "description": "the cat must be fuffy"
       }
-    ],
-    "paths": {
+  ],
+  "paths": {
       "/version": {
-        "get": {
-          "tags": [
-            "version"
-          ],
-          "operationId": "version",
-          "responses": {
-            "200": {
-              "description": "OK",
-              "content": {
-                "*/*": {
-                  "schema": {
-                    "type": "object"
+          "get": {
+              "tags": [
+                  "version"
+              ],
+              "operationId": "version",
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "content": {
+                          "*/*": {
+                              "schema": {
+                                  "type": "object"
+                              }
+                          }
+                      }
                   }
-                }
-              }
-            }
+              },
+              "x-name": "Josh",
+              "x-codes": [
+                  "11",
+                  "12"
+              ]
           }
-        }
+      },
+      "/cat": {
+          "get": {
+              "tags": [
+                  "catAPI",
+                  "catAPI;RF-0001",
+                  "catAPI;entitlement"
+              ],
+              "operationId": "version_1",
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "content": {
+                          "*/*": {
+                              "schema": {
+                                  "type": "object"
+                              }
+                          }
+                      }
+                  }
+              }
+          }
       }
-    },
-    "components": {}
-  }
+  },
+  "components": {}
+}
